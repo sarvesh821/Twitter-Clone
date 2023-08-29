@@ -79,59 +79,59 @@ tweet_text_area.addEventListener("keyup", () => {
     text_limit.style.color = "rgb(0,0,0,0.8)";
   }
 });
-    // Edit functionality
-    function handleEditButtonClick(event) {
-      const postCard = event.target.closest('.post_card_bx');
-      const contentBox = postCard.querySelector('.content');
-      const editButtons = contentBox.querySelector('.edit-delete-buttons');
-      const tweetText = contentBox.querySelector('h3');
-      
-      const editTextArea = document.createElement('textarea');
-      editTextArea.value = tweetText.textContent;
-      editTextArea.classList.add('edit-textarea');
+// Edit functionality
+function handleEditButtonClick(event) {
+  const postCard = event.target.closest(".post_card_bx");
+  const contentBox = postCard.querySelector(".content");
+  const editButtons = contentBox.querySelector(".edit-delete-buttons");
+  const tweetText = contentBox.querySelector("h3");
 
-      const updateButton = document.createElement('button');
-      updateButton.textContent = 'Update';
-      updateButton.classList.add('update-button');
-      updateButton.addEventListener('click', handleUpdateButtonClick);
+  const editTextArea = document.createElement("textarea");
+  editTextArea.value = tweetText.textContent;
+  editTextArea.classList.add("edit-textarea");
 
-      contentBox.replaceChild(editTextArea, tweetText);
-      editButtons.replaceChild(updateButton, event.target);
-  }
+  const updateButton = document.createElement("button");
+  updateButton.textContent = "Update";
+  updateButton.classList.add("update-button");
+  updateButton.addEventListener("click", handleUpdateButtonClick);
 
-  // Update functionality
-  function handleUpdateButtonClick(event) {
-      const postCard = event.target.closest('.post_card_bx');
-      const contentBox = postCard.querySelector('.content');
-      const editButtons = contentBox.querySelector('.edit-delete-buttons');
-      const editTextArea = contentBox.querySelector('.edit-textarea');
-      
-      const tweetText = document.createElement('h3');
-      tweetText.textContent = editTextArea.value;
+  contentBox.replaceChild(editTextArea, tweetText);
+  editButtons.replaceChild(updateButton, event.target);
+}
 
-      const editButton = document.createElement('button');
-      editButton.textContent = 'Edit';
-      editButton.classList.add('edit-button');
-      editButton.addEventListener('click', handleEditButtonClick);
+// Update functionality
+function handleUpdateButtonClick(event) {
+  const postCard = event.target.closest(".post_card_bx");
+  const contentBox = postCard.querySelector(".content");
+  const editButtons = contentBox.querySelector(".edit-delete-buttons");
+  const editTextArea = contentBox.querySelector(".edit-textarea");
 
-      contentBox.replaceChild(tweetText, editTextArea);
-      editButtons.replaceChild(editButton, event.target);
-  }
+  const tweetText = document.createElement("h3");
+  tweetText.textContent = editTextArea.value;
 
-  // Delete functionality
-  function handleDeleteButtonClick(event) {
-      const postCard = event.target.closest('.post_card_bx');
-      postCard.remove();
-  }
+  const editButton = document.createElement("button");
+  editButton.textContent = "Edit";
+  editButton.classList.add("edit-button");
+  editButton.addEventListener("click", handleEditButtonClick);
 
-  // Add event listeners for Edit buttons
-  const editButtons = document.querySelectorAll('.edit-button');
-  editButtons.forEach(editButton => {
-      editButton.addEventListener('click', handleEditButtonClick);
-  });
+  contentBox.replaceChild(tweetText, editTextArea);
+  editButtons.replaceChild(editButton, event.target);
+}
 
-  // Add event listeners for Delete buttons
-  const deleteButtons = document.querySelectorAll('.delete-button');
-  deleteButtons.forEach(deleteButton => {
-      deleteButton.addEventListener('click', handleDeleteButtonClick);
-  });
+// Delete functionality
+function handleDeleteButtonClick(event) {
+  const postCard = event.target.closest(".post_card_bx");
+  postCard.remove();
+}
+
+// Add event listeners for Edit buttons
+const editButtons = document.querySelectorAll(".edit-button");
+editButtons.forEach((editButton) => {
+  editButton.addEventListener("click", handleEditButtonClick);
+});
+
+// Add event listeners for Delete buttons
+const deleteButtons = document.querySelectorAll(".delete-button");
+deleteButtons.forEach((deleteButton) => {
+  deleteButton.addEventListener("click", handleDeleteButtonClick);
+});
