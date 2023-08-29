@@ -909,6 +909,39 @@ header
   .post_main_bx
   .post_card_bx
   .content
+  button {
+  background-color: #1ca1f1;
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+  cursor: pointer;
+  transition: 0.3s linear;
+  color: #fff;
+  margin-bottom: 5px;
+  justify-content: end;
+}
+
+header
+  section
+  .profile_post_follow_bx
+  .post_follow_bx
+  .post
+  .post_main_bx
+  .post_card_bx
+  .content
+  button:hover {
+    background-color: rgb(28, 162, 241, 0.5);
+}
+header
+  section
+  .profile_post_follow_bx
+  .post_follow_bx
+  .post
+  .post_main_bx
+  .post_card_bx
+  .content
   .retweet {
   color: rgb(0, 0, 0, 0.3);
   font-size: 11px;
